@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+{% block homeactive %} active {% endblock homeactive %}
+
+{% block body %}
+<div class="container my-3">
+<section class="jumbotron text-center">
+    <div class="container">
+        <img src="/static/common/img/photo.jpg" alt="logo" width="220">
+        <h1 class="jumbotron-heading"><span id="typed">Welcome to EducationPoint...</span></h1>
+        <p class="lead text-muted">Confused on which course to take? I have got you covered. Browse courses and find out
+            the best course for you. Its free!<br>EducationPoint is my attempt to teach basics and those coding
+            techniques to people in short time which took me ages to learn.</p>
+        <p>
+            <a href="/blog" class="btn btn-danger my-2">Browse Blog</a>
+            <a href="/contact" class="btn btn-primary my-2">Contact Me</a>
+        </p>
+    </div>
+</section>
+</div>
+
+<div class="container" style="height: auto !important;">
+    <div class="row" style="height: auto !important;">
+        
+
+        <div class="card mx-auto my-2 p-2" style="width: 18rem; height: auto !important;">
+            <img width="23px" height="245px" src="/static/common/img/photo.png" class="card-img-top" alt="...">
+            <div class="card-body" style="height: auto !important;">
+                <h5 class="card-title">Important Articals</h5>
+                <p class="card-text">Some of the latest coding information compiled as coding articles. Keep your
+                    programming knowledge up to date with our coding articles.</p>
+                <a href="/blog" class="btn btn-danger">Go to Blog</a>
+            </div>
+        </div>
+
+        <div class="card mx-auto my-2 p-2" style="width: 18rem;">
+            <img width="23px" height="245px" src="/static/common/img/contact.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Contact Me</h5>
+                <p class="card-text">Learn programming from our free courses. Examples are available with these
+                    tutorials. You can contact me for any doubt and I will get back to you!</p>
+                <a href="/contact" class="btn btn-success">Contact Me</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+ {% endblock body %}

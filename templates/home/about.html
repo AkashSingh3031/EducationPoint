@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %} About {% endblock title %}
+{% block aboutactive %} active {% endblock aboutactive %}
+{% block body %}
+
+<div class="section intro-edu">
+    <div class="container">
+        <div class="intro-edu-wrapper">
+            <div class="row">
+                <div class="col-md-5"><img src="static/common/img/Akash1.jpg" width="300" height="750" alt=""
+                        class="intro-image fadeInLeft  wow  animated" style="visibility: visible;"></div>
+                <div class="col-md-7">
+                    <div class="intro-title">About <b>AKASH SINGH</b> </div>
+                    <hr>
+                    <div class="intro-content">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th class="item-key">Gender</th>
+                                    <td>MALE</td>
+                                </tr>
+
+
+                                <tr>
+                                    <th class="item-key">Location</th>
+                                    <td><span class="locality"><a
+                                                href="/profile-find.g?t=l&amp;loc0=IN&amp;loc1=Madhya+Pradesh&amp;loc2=Bhopal">Bhopal</a>,</span>
+                                        <span class="region"><a
+                                                href="/profile-find.g?t=l&amp;loc0=IN&amp;loc1=Madhya+Pradesh">Madhya
+                                                Pradesh</a>,</span>
+                                        <span class="country-name"><a
+                                                href="/profile-find.g?t=l&amp;loc0=IN">India</a></span></td>
+                                </tr>
+                                <tr>
+                                    <th class="item-key">Introduction</th>
+                                    <td>I am AKASH SINGH originally from Uttar Pradesh.
+                                        I live in bhopal and here I am persuing my B.Tech in computer science.
+                                        I am blogging because i love to write and share my knowledge and also it helps
+                                        so much in study.</td>
+                                </tr>
+                                <hr>
+                                <tr>
+                                    <th class="item-key">Interests</th>
+                                    <td><span class="favorites"><a
+                                                href="/profile-find.g?t=i&amp;q=Playing+video+games">Reading Books,
+                                                </a> <a href="/profile-find.g?t=i&amp;q=Watching+Movies">,
+                                                </a> <a href="/profile-find.g?t=i&amp;q=Reading+Books">,
+                                                </a></span></td>
+                                </tr>
+                                
+                                {% comment %} <tr>
+                                    <th class="item-key">Favourite Films</th>
+                                    <td><span class="favorites"><a
+                                                href="/profile-find.g?t=m&amp;q=Inception">Inception,</a> <a
+                                                href="/profile-find.g?t=m&amp;q=Shawshank+Redemption">Shawshank
+                                                Redemption,</a> <a
+                                                href="/profile-find.g?t=m&amp;q=Fast+and+Furious+series">Fast and
+                                                Furious series</a></span></td>
+                                </tr> {% endcomment %}
+                                {% comment %} <tr>
+                                    <th class="item-key">Favourite Music</th>
+                                    <td><span class="favorites"><a
+                                                href="/profile-find.g?t=s&amp;q=Heartattack+-+by+Enrique+Lglesias">Heartattack
+                                                - by Enrique Lglesias</a></span></td>
+                                </tr> {% endcomment %}
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

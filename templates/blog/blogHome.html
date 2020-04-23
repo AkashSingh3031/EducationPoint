@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+
+{% block title %} Blog-Home {% endblock title %}
+{% block blogactive %} active {% endblock blogactive %}
+{% block body %}
+<div class="container my-3">
+    <h2>EducationPoint-Blogs</h2>
+    <hr>
+
+
+    <div class="row my-4 mx-4">
+        <div class="col-md-6 col-lg-4 text-center">
+            <img class="rounded-circle" src="/static/common/img/gateNote.png" width="150" height="150">
+            <h2>GATE-CSE: NOTES <br><b>( Subject Wise )</b></h2>
+            <p>
+                In this series, we will learn Gate Computer Science Note with Subject Wise...
+            </p>
+            <p>
+
+                <a href="/blog/gate/gateNote.html"><button class="btn btn-outline-danger">Start Learning »</button></a>
+
+            </p>
+        </div>
+
+        <div class="col-md-6 col-lg-4 text-center">
+            <img class="rounded-circle" src="/static/common/img/gate.png" width="150" height="150">
+            <h2>GATE-CSE: All Previous Year Questions <br> <b>( Year-Wise )</b></h2>
+            <p>
+                In this series, we will solve all previous Year Questions with year wise...
+            </p>
+            <p>
+
+                <a href="/blog/gate/yearPaper.html"><button class="btn btn-outline-danger">Start Learning
+                        »</button></a>
+
+            </p>
+        </div>
+
+        <div class="col-md-6 col-lg-4 text-center">
+            <img class="rounded-circle" src="/static/common/img/gate.png" width="150" height="150">
+            <h2>GATE-CSE: All Previous Year Questions <br><b>( Subject-Wise )</b></h2>
+            <p>
+                In this series, we will solve all previous Year Questions with subject wise...
+            </p>
+            <p>
+
+                <a href="/blog/gate/subPaper.html"><button class="btn btn-outline-danger">Start Learning
+                        »</button></a>
+
+            </p>
+        </div>
+    </div>
+
+
+    {% comment %} <div class="col-md-6 col-lg-4 text-center">
+        <img class="rounded-circle" src="/media/videoSeries/Python-logo_pHm7ClE.jpg" width="140" height="140">
+        <h2>GATE:-Digital-Logic Notes and Question with Answer</h2>
+        <p>
+            In this series, we will learn about General Python Errors In Hindi
+        </p>
+        <p>
+
+            <a href="general-python-errors-1"><button class="btn btn-outline-danger">Start Learning »</button></a>
+
+        </p>
+    </div>
+
+    <div class="col-md-6 col-lg-4 text-center">
+        <img class="rounded-circle" src="/media/videoSeries/php.png" width="140" height="140">
+        <h2>GATE:-Computer-Organization-and-Architecture Notes and Question with Answer</h2>
+        <p>
+            In this series, we will learn about Creating a Realtime PHP Chatroom Using PHP &amp; Jquery
+        </p>
+        <p>
+
+            <a href="realtime-php-chatroom-1"><button class="btn btn-outline-danger">Start Learning »</button></a>
+
+        </p>
+    </div>
+
+    <div class="col-md-6 col-lg-4 text-center">
+        <img class="rounded-circle" src="/media/videoSeries/SAP-software-vulnerable-hack-security-fraud.jpg" width="140"
+            height="140">
+        <h2>GATE:-Operating-System Notes and Question with Answer</h2>
+        <p>
+            In this series, we will learn about Learn In One Video
+        </p>
+        <p>
+
+            <a href="learn-javascript-in-one-video-in-hindi"><button class="btn btn-outline-danger">Start Learning
+                    »</button></a>
+
+        </p>
+    </div>
+
+    <div class="col-md-6 col-lg-4 text-center">
+        <img class="rounded-circle" src="/media/videoSeries/flas.png" width="140" height="140">
+        <h2>GATE:-Theory-of-Computation Notes and Question with Answer</h2>
+        <p>
+            In this series, we will learn about Web Development Using Flask and Python
+        </p>
+        <p>
+
+            <a href="web-dev-using-flask-and-python-1"><button class="btn btn-outline-danger">Start Learning
+                    »</button></a>
+
+        </p>
+    </div>
+
+    <div class="col-md-6 col-lg-4 text-center">
+        <img class="rounded-circle" src="/media/videoSeries/git_a6oiG1D.png" width="140" height="140">
+        <h2>GATE:-Computer-Network Notes and Question with Answer</h2>
+        <p>
+            In this series, we will learn about Git and GitHub Tutorials For Beginners In Hindi
+        </p>
+        <p>
+
+            <a href="git-tut-beginners-hindi-1"><button class="btn btn-outline-danger">Start Learning »</button></a>
+
+        </p>
+    </div>
+
+    <div class="col-md-6 col-lg-4 text-center">
+        <img class="rounded-circle" src="/media/videoSeries/pandas.png" width="140" height="140">
+        <h2>GATE:-Compiler-Design Notes and Question with Answer</h2>
+        <p>
+            In this series, we will learn about Python Data Science and Big Data Tutorials In Hindi
+        </p>
+        <p>
+
+            <a href="python-big-data-hindi-1"><button class="btn btn-outline-danger">Start Learning »</button></a>
+
+        </p>
+    </div>
+
+    <div class="col-md-6 col-lg-4 text-center">
+        <img class="rounded-circle" src="/media/videoSeries/Python-logo.jpg" width="140" height="140">
+        <h2>GATE:-Database Notes and Question with Answer</h2>
+        <p>
+            In this series, we will learn about Basic Python Programs With Code
+        </p>
+        <p>
+
+            <a href="basic-python-programs-1"><button class="btn btn-outline-danger">Start Learning »</button></a>
+
+        </p>
+    </div>
+
+    <div class="col-md-6 col-lg-4 text-center">
+        <img class="rounded-circle" src="/media/videoSeries/cloudai.jpg" width="140" height="140">
+        <h2>Machine Learning Tutorials For Beginners Using Python In Hindi</h2>
+        <p>
+            In this series, we will learn about Machine Learning Tutorials For Beginners Using Python In Hindi
+        </p>
+        <p>
+
+            <a href="ml-tutorials-in-hindi-1"><button class="btn btn-outline-danger">Start Learning »</button></a>
+
+        </p>
+    </div>
+    {% endcomment %}
+
+
+    {% for post in allPosts %}
+    {% comment %} <div class="row my-4 mx-4"> {% endcomment %}
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <div
+                    class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <h4 class="mb-0">{{post.title}}</h4>
+                        <strong class="d-inline-block mb-2 text-primary">Artical by: {{post.author}}</strong>
+                        <div class="mb-1 text-muted">
+                            <li>{{post.timeStamp}}</li>
+                        </div><br>
+                        <p class="card-text mb-auto">{{post.content| truncatechars:500}}</p>
+                        <div class="my-2">
+                            <a href="/blog/{{post.slug}}" role="button" class="btn btn-outline-danger">Continue
+                                reading</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    {% comment %} </div> {% endcomment %}
+    {% endblock body %}
