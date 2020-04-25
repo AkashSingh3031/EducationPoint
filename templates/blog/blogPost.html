@@ -4,6 +4,8 @@
 {% block blogactive %} active {% endblock blogactive %}
 
 {% block body %}
+{% load humanize %} 
+
 <div class="container my-3">
         <h2 class="blog-post-title">{{post.title}}</h2>
         <p style="color: red;" class="blog-post-meta"><b>{{post.timeStamp}}</b> <br><strong>By:</strong> <a
@@ -13,7 +15,9 @@
 </div>
 <hr>
 <div class="container">
-        <h2>Comments:</h2>
+        <div class="my-2">
+        <h2>Comments ({{comments.count}}):</h2>
+        {% if user.is_authenticated %}
         <form action="/blog/postComment" method="post">
                 {% csrf_token %}
                 <div class="form-group">
@@ -24,13 +28,25 @@
                 <button type="submit" class="btn btn-danger">Submit</button>
         </form>
 
+        {% else %}
+        <div class="my-4">
+                <h2><label for="inputAddress">You must be logged in to post a comment!</label></h2>
+                <button type="submit" class="btn btn-danger my-2 my-sm-0 ml-2" data-toggle="modal" data-target="#loginModal">Login Here</button>
+                <button type="submit" class="btn btn-danger my-2 my-sm-0 ml-2" data-toggle="modal" data-target="#signupModal">Signup Here</button>
+        </div><hr>
+        
+        {% endif %}
+
+        
+        </div>
+
         {% for comment in comments %}
         <div class="row my-3">
                 <div class="col-md-1">
                 <img class="userPic rounded-circle w-100 p-2" src="/static/common/img/user.png">
                 </div>
                 <div class="col-md-11">
-                <b>{{comment.user.username}}</b> at   {{comment.timeStamp}}
+                <b>{{comment.user.username}}</b>  <span class="badge badge-secondary"> {{comment.timeStamp | naturaltime}} </span>
                 <div> {{comment.comment}} </div>
                 </div>
         </div>
