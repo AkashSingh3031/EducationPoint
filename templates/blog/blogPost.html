@@ -4,7 +4,7 @@
 {% block blogactive %} active {% endblock blogactive %}
 
 {% block body %}
-{% load humanize %} 
+{% load humanize %}
 
 <div class="container my-3">
         <h2 class="blog-post-title">{{post.title}}</h2>
@@ -16,38 +16,67 @@
 <hr>
 <div class="container">
         <div class="my-2">
-        <h2>Comments ({{comments.count}}):</h2>
-        {% if user.is_authenticated %}
-        <form action="/blog/postComment" method="post">
-                {% csrf_token %}
-                <div class="form-group">
-                        <label for="exampleInputEmail1"><b>Post Comments:</b></label>
-                        <input type="text" class="form-control" name="comment" placeholder="Enter your comment here">
+                <h2>Comments ({{comments.count}}):</h2>
+                {% if user.is_authenticated %}
+                <form action="/blog/postComment" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                                <label for="exampleInputEmail1"><b>Post Comments:</b></label>
+                                <input type="text" class="form-control" name="comment"
+                                        placeholder="Enter your comment here">
+                        </div>
+                        <input type="hidden" name="postSno" value="{{post.sno}}">
+                        <input type="hidden" name="parentSno" value="">
+                        <button type="submit" class="btn btn-danger">Submit</button>
+                </form>
+
+                {% else %}
+                <div class="my-4">
+                        <h2><label for="inputAddress">You must be logged in to post a comment!</label></h2>
+                        <button type="submit" class="btn btn-danger my-2 my-sm-0 ml-2" data-toggle="modal"
+                                data-target="#loginModal">Login Here</button>
+                        <button type="submit" class="btn btn-danger my-2 my-sm-0 ml-2" data-toggle="modal"
+                                data-target="#signupModal">Signup Here</button>
                 </div>
-                <input type="hidden" name="postSno" value="{{post.sno}}">
-                <button type="submit" class="btn btn-danger">Submit</button>
-        </form>
+                <hr>
 
-        {% else %}
-        <div class="my-4">
-                <h2><label for="inputAddress">You must be logged in to post a comment!</label></h2>
-                <button type="submit" class="btn btn-danger my-2 my-sm-0 ml-2" data-toggle="modal" data-target="#loginModal">Login Here</button>
-                <button type="submit" class="btn btn-danger my-2 my-sm-0 ml-2" data-toggle="modal" data-target="#signupModal">Signup Here</button>
-        </div><hr>
-        
-        {% endif %}
+                {% endif %}
 
-        
+
         </div>
 
         {% for comment in comments %}
         <div class="row my-3">
                 <div class="col-md-1">
-                <img class="userPic rounded-circle w-100 p-2" src="/static/common/img/user.png">
+                        <img class="userPic rounded-circle w-100 p-2" src="/static/common/img/user.png">
                 </div>
                 <div class="col-md-11">
-                <b>{{comment.user.username}}</b>  <span class="badge badge-secondary"> {{comment.timeStamp | naturaltime}} </span>
-                <div> {{comment.comment}} </div>
+                        <b>{{comment.user.username}}</b> <span class="badge badge-secondary">
+                                {{comment.timeStamp | naturaltime}} </span>
+                        <div> {{comment.comment}} </div>
+                        <div class="reply mx-0">
+                                <button class="btn btn-sm btn-danger" type="button" data-toggle="collapse"
+                                        data-target="#replyBox{{comment.sno}}" aria-expanded="false"
+                                        aria-controls="replyBox{{comment.sno}}">
+                                        Reply
+                                </button>
+                                <div class="collapse" id="replyBox{{comment.sno}}">
+                                        <div class="card card-body my-2">
+                                                <form action="/blog/postComment" method="post">
+                                                        {% csrf_token %}
+                                                        <div class="form-group">
+                                                                <label for="comment"><b>Post
+                                                                                Reply:</b></label>
+                                                                <input type="text" class="form-control" name="comment"
+                                                                        placeholder="Enter your reply here">
+                                                                <input type="hidden" name="parentSno" value="{{comment.sno}}">
+                                                        </div>
+                                                        <input type="hidden" name="postSno" value="{{post.sno}}">
+                                                        <button type="submit" class="btn btn-danger">Submit</button>
+                                                </form>
+                                        </div>
+                                </div>
+                        </div>
                 </div>
         </div>
         {% endfor %}
