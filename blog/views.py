@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Post, BlogComment
 from django.contrib import messages
-# from django.templatetags import extras
+from django.templatetags import *
 
 # Create your views here.
 def blogHome(request):
