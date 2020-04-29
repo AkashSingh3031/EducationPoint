@@ -53,9 +53,10 @@
                 </div>
                 <div class="col-md-11">
                         <b>{{comment.user.username}}</b> <span class="badge badge-secondary">
-                                {{comment.timeStamp | naturaltime}} </span>
+                                {{comment.timeStamp|naturaltime}} </span>
                         <div> {{comment.comment}} </div>
                         <div class="reply mx-0">
+                                {% if user.is_authenticated %}
                                 <button class="btn btn-sm btn-danger" type="button" data-toggle="collapse"
                                         data-target="#replyBox{{comment.sno}}" aria-expanded="false"
                                         aria-controls="replyBox{{comment.sno}}">
@@ -70,17 +71,35 @@
                                                                                 Reply:</b></label>
                                                                 <input type="text" class="form-control" name="comment"
                                                                         placeholder="Enter your reply here">
-                                                                <input type="hidden" name="parentSno" value="{{comment.sno}}">
+                                                                <input type="hidden" name="parentSno"
+                                                                        value="{{comment.sno}}">
                                                         </div>
                                                         <input type="hidden" name="postSno" value="{{post.sno}}">
                                                         <button type="submit" class="btn btn-danger">Submit</button>
                                                 </form>
                                         </div>
                                 </div>
-                                <div class="replies bg-success my-2">
+                                {% else %}
+                                <button class="btn btn-sm btn-danger" type="button" data-toggle="collapse"
+                                        data-target="#replyBox{{comment.sno}}" aria-expanded="false"
+                                        aria-controls="replyBox{{comment.sno}}" disable>
+                                        Login to Reply
+                                </button>
+                                {% endif %}
+                                <div class="replies my-2">
                                         {% for reply in replyDict|get_val:comment.sno %}
-                                                {{reply}}
-                                                <br>
+                                        <div class="row my-2">
+                                                <div class="col-md-1">
+                                                        <img class="userPic rounded-circle w-100 p-2"
+                                                                src="/static/common/img/user.png">
+                                                </div>
+                                        <div class="col-md-11">
+                                        {% comment %} {{reply.comment}} {% endcomment %}
+                                        <b>{{reply.user.username}}</b> <span class="badge badge-secondary">
+                                        {{reply.timeStamp|naturaltime}} </span><div> {{reply.comment}} </div>
+                                        </div>
+                                        <br>
+                                        </div>
                                         {% endfor %}
                                 </div>
                         </div>
