@@ -93,12 +93,14 @@
                                                         <img class="userPic rounded-circle w-100 p-2"
                                                                 src="/static/common/img/user.png">
                                                 </div>
-                                        <div class="col-md-11">
-                                        {% comment %} {{reply.comment}} {% endcomment %}
-                                        <b>{{reply.user.username}}</b> <span class="badge badge-secondary">
-                                        {{reply.timeStamp|naturaltime}} </span><div> {{reply.comment}} </div>
-                                        </div>
-                                        <br>
+                                                <div class="col-md-11">
+                                                        {% comment %} {{reply.comment}} {% endcomment %}
+                                                        <b>{{reply.user.username}}</b> <span
+                                                                class="badge badge-secondary">
+                                                                {{reply.timeStamp|naturaltime}} </span>
+                                                        <div> {{reply.comment}} </div>
+                                                </div>
+                                                <br>
                                         </div>
                                         {% endfor %}
                                 </div>
