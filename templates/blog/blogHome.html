@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 
 {% block title %} Blog-Home {% endblock title %}
+
+{% block js %}
+<script>
+let previews = documentgetElementsByClassName('preview');
+Array.from(previews).forEach((element) =>{
+        element.innerHTML = element.innerText
+})
+</script>
+{% endblock js %}
+
 {% block blogactive %} active {% endblock blogactive %}
 {% block body %}
 <div class="container my-3">
@@ -173,7 +183,7 @@
                         <div class="mb-1 text-muted">
                             <li>{{post.timeStamp}}</li>
                         </div><br>
-                        <p class="card-text mb-auto">{{post.content| truncatechars:500}}</p>
+                        <p class="card-text mb-auto"><div class="preview">{{post.content|safe|truncatechars:500}}</div></p>
                         <div class="my-2">
                             <a href="/blog/{{post.slug}}" role="button" class="btn btn-outline-danger">Continue
                                 reading</a>
