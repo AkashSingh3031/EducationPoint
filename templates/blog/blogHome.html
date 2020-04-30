@@ -183,7 +183,7 @@ Array.from(previews).forEach((element) =>{
                         <div class="mb-1 text-muted">
                             <li>{{post.timeStamp}}</li>
                         </div><br>
-                        <p class="card-text mb-auto"><div class="preview">{{post.content|safe|truncatechars:500}}</div></p>
+                        <p class="card-text mb-auto"><div class="preview">{{post.content|safe|truncatechars:250}}</div></p>
                         <div class="my-2">
                             <a href="/blog/{{post.slug}}" role="button" class="btn btn-outline-danger">Continue
                                 reading</a>
