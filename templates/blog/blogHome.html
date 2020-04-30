@@ -4,9 +4,9 @@
 
 {% block js %}
 <script>
-let previews = documentgetElementsByClassName('preview');
+let previews = document.getElementsByClassName('preview');
 Array.from(previews).forEach((element) =>{
-        element.innerHTML = element.innerText
+        element.innerHTML = element.innerText;
 })
 </script>
 {% endblock js %}
