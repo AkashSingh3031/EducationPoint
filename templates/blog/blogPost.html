@@ -10,8 +10,10 @@
 <div class="container my-3">
         <h2 class="blog-post-title">{{post.title}}</h2>
         <p style="color: red;" class="blog-post-meta"><b>{{post.timeStamp}}</b> <br><strong>By:</strong> <a
-                        href="/about">{{post.author}}</a></p>
+                        href="/about">{{post.author}}</a>  (<span>{{post.views}} views</span>)</p>
         <hr>
+
+
         <p>{{post.content|safe}}</p>
 </div>
 <hr>

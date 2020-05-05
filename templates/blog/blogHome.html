@@ -63,14 +63,14 @@ Array.from(previews).forEach((element) =>{
 
 
     {% comment %} <div class="col-md-6 col-lg-4 text-center">
-        <img class="rounded-circle" src="/media/videoSeries/Python-logo_pHm7ClE.jpg" width="140" height="140">
-        <h2>GATE:-Digital-Logic Notes and Question with Answer</h2>
+        <img class="rounded-circle" src="/static/common/img/gate.png" width="150" height="150">
+        <h2>Coding Articals</h2>
         <p>
-            In this series, we will learn about General Python Errors In Hindi
+            In this series, we will learn all concept of algorithm with python code
         </p>
         <p>
 
-            <a href="general-python-errors-1"><button class="btn btn-outline-danger">Start Learning »</button></a>
+            <a href="/blog/{{post.slug}}" role="button" class="btn btn-outline-danger">Continue Reading</a>
 
         </p>
     </div>
@@ -173,17 +173,16 @@ Array.from(previews).forEach((element) =>{
 
     {% for post in allPosts %}
     {% comment %} <div class="row my-4 mx-4"> {% endcomment %}
-        <div class="row mb-2">
-            <div class="col-md-6">
-                <div
-                    class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="row-mb-2">
+            <div class="col-md-10">
+                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
                         <h4 class="mb-0"><a class="text-dark" href="/blog/{{post.slug}}">{{post.title}}</a></h4>
-                        <strong class="d-inline-block mb-2 text-primary">Artical by: {{post.author}}</strong>
+                        <strong class="d-inline-block mb-2 text-primary">Artical by: {{post.author}} ({{post.views}} views)</strong>
                         <div class="mb-1 text-muted">
                             <li>{{post.timeStamp}}</li>
                         </div><br>
-                        <p class="card-text mb-auto"><div class="preview">{{post.content|safe|truncatechars:250}}</div></p>
+                        <p class="card-text mb-auto"><div class="preview">{{post.content|safe|truncatechars:141}}</div></p>
                         <div class="my-2">
                             <a href="/blog/{{post.slug}}" role="button" class="btn btn-outline-danger">Continue
                                 reading</a>
@@ -193,6 +192,6 @@ Array.from(previews).forEach((element) =>{
                 </div>
             </div>
         </div>
-        {% endfor %}
         {% comment %} </div> {% endcomment %}
+        {% endfor %}
     {% endblock body %}
