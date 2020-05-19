@@ -4,10 +4,10 @@
 
 {% block js %}
 <script>
-let previews = document.getElementsByClassName('preview');
-Array.from(previews).forEach((element) =>{
+    let previews = document.getElementsByClassName('preview');
+    Array.from(previews).forEach((element) => {
         element.innerHTML = element.innerText;
-})
+    })
 </script>
 {% endblock js %}
 
@@ -17,7 +17,7 @@ Array.from(previews).forEach((element) =>{
     <h2>EducationPoint-Blogs</h2>
     <hr>
 
-
+    {% comment %}
     <div class="row my-4 mx-4">
         <div class="col-md-6 col-lg-4 text-center">
             <img class="rounded-circle" src="/static/common/img/gateNote.png" width="150" height="150">
@@ -62,17 +62,17 @@ Array.from(previews).forEach((element) =>{
     </div>
 
 
-    {% comment %} <div class="col-md-6 col-lg-4 text-center">
-        <img class="rounded-circle" src="/static/common/img/gate.png" width="150" height="150">
-        <h2>Coding Articals</h2>
-        <p>
-            In this series, we will learn all concept of algorithm with python code
-        </p>
-        <p>
+    <div class="col-md-6 col-lg-4 text-center">
+            <img class="rounded-circle" src="/static/common/img/gate.png" width="150" height="150">
+            <h2>Coding Articals</h2>
+            <p>
+                In this series, we will learn all concept of algorithm with python code
+            </p>
+            <p>
 
-            <a href="/blog/{{post.slug}}" role="button" class="btn btn-outline-danger">Continue Reading</a>
+                <a href="/blog/python/{{post.slug}}" role="button" class="btn btn-outline-danger">Continue Reading</a>
 
-        </p>
+            </p>
     </div>
 
     <div class="col-md-6 col-lg-4 text-center">
@@ -175,14 +175,18 @@ Array.from(previews).forEach((element) =>{
     {% comment %} <div class="row my-4 mx-4"> {% endcomment %}
         <div class="row-mb-2">
             <div class="col-md-10">
-                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div
+                    class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
                         <h4 class="mb-0"><a class="text-dark" href="/blog/{{post.slug}}">{{post.title}}</a></h4>
-                        <strong class="d-inline-block mb-2 text-primary">Artical by: {{post.author}} ({{post.views}} views)</strong>
+                        <strong class="d-inline-block mb-2 text-primary">Artical by: {{post.author}} ({{post.views}}
+                            views)</strong>
                         <div class="mb-1 text-muted">
                             <li>{{post.timeStamp}}</li>
                         </div><br>
-                        <p class="card-text mb-auto"><div class="preview">{{post.content|safe|truncatechars:141}}</div></p>
+                        <p class="card-text mb-auto">
+                        <div class="preview">{{post.content|safe|truncatechars:141}}</div>
+                        </p>
                         <div class="my-2">
                             <a href="/blog/{{post.slug}}" role="button" class="btn btn-outline-danger">Continue
                                 reading</a>
@@ -193,5 +197,5 @@ Array.from(previews).forEach((element) =>{
             </div>
         </div>
         {% comment %} </div> {% endcomment %}
-        {% endfor %}
+    {% endfor %}
     {% endblock body %}

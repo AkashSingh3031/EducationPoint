@@ -46,31 +46,31 @@ def postComment(request):
 
 
 
-# GATE_NOTES
-def gateNote(request):
-    allPosts = Post.objects.all()
-    # print(post)
-    context = {'allPosts':allPosts} 
-    return render(request, 'blog/gate/gateNote.html', context)
+# # GATE_NOTES
+# def gateNote(request):
+#     allPosts = Post.objects.all()
+#     # print(post)
+#     context = {'allPosts':allPosts} 
+#     return render(request, 'blog/gate/gateNote.html', context)
 
-# YEAR-WISE PAPERS
-def yearPaper(request):
-    allPosts = Post.objects.all()
-    # print(post)
-    context = {'allPosts':allPosts} 
-    return render(request, 'blog/gate/yearPaper.html', context)
+# # YEAR-WISE PAPERS
+# def yearPaper(request):
+#     allPosts = Post.objects.all()
+#     # print(post)
+#     context = {'allPosts':allPosts} 
+#     return render(request, 'blog/gate/yearPaper.html', context)
 
-def Y_2020(request):
-    allPosts = Post.objects.all()
-    # print(post)
-    context = {'allPosts':allPosts} 
-    return render(request, 'blog/gate/year/Y_2020.html', context)
+# def Y_2020(request):
+#     allPosts = Post.objects.all()
+#     # print(post)
+#     context = {'allPosts':allPosts} 
+#     return render(request, 'blog/gate/year/Y_2020.html', context)
 
 
-# SUBJECT_WISE PAPERS
-def subPaper(request):
-    allPosts = Post.objects.all()
-    # print(post)
-    context = {'allPosts':allPosts} 
-    return render(request, 'blog/gate/subPaper.html', context)
+# # SUBJECT_WISE PAPERS
+# def subPaper(request):
+#     allPosts = Post.objects.all()
+#     # print(post)
+#     context = {'allPosts':allPosts} 
+#     return render(request, 'blog/gate/subPaper.html', context)
 
