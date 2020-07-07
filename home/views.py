@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from blog.models import Post
+import requests
+import json
 
 # Create your views here.
 def home(request):
@@ -18,15 +20,29 @@ def contact(request):
         phone = request.POST['phone']
         email = request.POST['email']
         content = request.POST['content']
-        print(name, phone, email, content)
+        # print(name, phone, email, content)
 
         if len(name)<2 or len(email)<3 or len(phone)<10 or len(content)<4:
-            messages.error(request, "Please fill the form correctly!")
+            messages.error(request, "Please fill the form correctly!\n Length --> Name > 2, Email > 3, Phone > 10, Comment > 4")
         else:
             contact = Contact(name=name, phone=phone, email=email, content=content)
             contact.save()
             messages.success(request, "Your message has been successfully sent!")
 
+        #reCAPTCHA Stuff
+        clientKey = request.POST("g-recaptcha-response")
+        secretKey = '6LeSpaMZAAAAADdgnXmrQXWqg2ZUWGOm8LJJBaPl'
+        captchaData = {
+            'secret':secretKey,
+            'response':clientKey
+        }
+        r = request.POST("https://www.google.com/recaptcha/api/siteverify", data=captchaData)
+        response = json.loads(r.text)
+        verify = response['success']
+        if verify:
+            return HttpResponse('<script> alert("success");</script>')
+        else:
+            return HttpResponse('<script> alert(" Not success");</script>')
 
     return render(request, 'home/contact.html')
 
