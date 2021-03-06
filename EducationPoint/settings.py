@@ -30,7 +30,7 @@ SECRET_KEY = '((1)y^vp=9quhulw14@5o&l%$@+v^#f_!x1iy%lg90+0j#s78_'
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','educationpoint.com']
+ALLOWED_HOSTS = ['127.0.0.1','educationpoint.herokuapp.com']
 
 
 # Application definition
