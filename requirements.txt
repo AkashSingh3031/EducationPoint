@@ -138,7 +138,7 @@ pydub==0.23.1
 pyfiglet==0.8.post1
 pygame==1.9.6
 PyGetWindow==0.0.8
-Pygments==2.6.1
+Pygments==2.7.4
 PyInstaller==3.5
 PyMsgBox==1.0.7
 PyMySQL==0.9.3
