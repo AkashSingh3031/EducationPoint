@@ -205,7 +205,7 @@ tzlocal==2.1
 update==0.0.1
 uritemplate==0.6
 urllib2-file==0.2.1
-urllib3==1.26.5
+urllib3==1.26.17
 validators==0.14.1
 vexmessage==0.4.0
 wcwidth==0.2.5
