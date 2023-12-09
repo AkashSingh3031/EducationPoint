@@ -139,7 +139,7 @@ pyfiglet==0.8.post1
 pygame==1.9.6
 PyGetWindow==0.0.8
 Pygments==2.15.0
-PyInstaller==3.6
+PyInstaller==5.13.1
 PyMsgBox==1.0.7
 PyMySQL==0.9.3
 PyMysqlDB==0.0.2
