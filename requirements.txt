@@ -186,7 +186,7 @@ sklearn==0.0
 sniffio==1.1.0
 soupsieve==1.9.5
 SpeechRecognition==3.8.1
-sqlparse==0.4.4
+sqlparse==0.5.0
 style==1.1.0
 tensorboard==2.2.1
 tensorboard-plugin-wit==1.6.0.post3
