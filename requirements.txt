@@ -141,7 +141,7 @@ PyGetWindow==0.0.8
 Pygments==2.15.0
 PyInstaller==5.13.1
 PyMsgBox==1.0.7
-PyMySQL==0.9.3
+PyMySQL==1.1.1
 PyMysqlDB==0.0.2
 pynput==1.6.8
 pyotp==2.3.0
