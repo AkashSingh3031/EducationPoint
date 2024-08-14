@@ -212,7 +212,7 @@ wcwidth==0.2.5
 webbrowserdownloader==0.1
 webdriverdownloader==1.1.0.3
 webencodings==0.5.1
-WebOb==1.8.5
+WebOb==1.8.8
 Werkzeug==3.0.3
 whitenoise==5.2.0
 widgetsnbextension==3.5.1
