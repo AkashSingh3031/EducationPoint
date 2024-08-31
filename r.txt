@@ -1,2 +1,2 @@
-opencv-contrib-python==4.2.0.34
+opencv-contrib-python==4.8.1.78
 opencv-python==4.3.0.36
